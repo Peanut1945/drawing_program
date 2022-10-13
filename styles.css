@@ -1,0 +1,15 @@
+#grid{
+    width: 460px;
+    height: 460px;
+    padding: 0;
+    border: 1px red solid;
+    
+}
+.cell{
+    outline: 2px black solid;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    
+}
