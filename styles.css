@@ -13,6 +13,7 @@ h1{
     margin-top: 1px;
     margin-bottom: 1px;
 }
+/*this is all on the platform*/
 button{
     width: inherit;
     height: inherit;
@@ -40,17 +41,20 @@ button{
     display: flex;
     flex-direction: column;
     width: 16em;
-    border-radius: 8px;
     margin-top: 1em;
 }
 .menu-button{
     display: flex;
     background-color: #808080;
-    height: 2em;
+    height: 4em;
     width: 14em;
     transition: all 0.2s;
-    border-radius: 8px;
     flex-direction: column;
+    text-align: center;
+    text-justify: center;
+    padding: 2px;
+    padding-top: 6px;
+    font-family: 'Courier New', Courier, monospace;
 }
 /* this part is for the changing grid*/
 #grid{
@@ -75,7 +79,29 @@ button{
 .paint{
     background-color: #001f1f;
 }
+/*these are the buttins that respond to inputs*/
 .outer-button-hover{
     background-color: #3c3b3b;
-    height: 6em;
+    height: 7em;
+}
+.sub-random-button{
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 4px;
+    margin-top: 11px;
+}
+.slider{
+    -webkit-appearance: none;
+    color: #001f1f;
+    background-color: #001f1f;
+    opacity: 2;
+    border-radius: 7px;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #34495E  ;
+    width: 5%;
+    height: 20px;
+    border-radius: 7px;
 }

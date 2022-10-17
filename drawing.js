@@ -1,12 +1,13 @@
 const grid = document.querySelector("#grid")
 const menuButtons = document.querySelectorAll(".menu-button") 
 const randomColourButton = document.querySelector(".random-button")
-
+const pixelSlider = document.querySelector(".pixel-slider")
+let savedSliderValue = "50"
 
 let click = false
 
 
-document.addEventListener("mousedown",() => {
+grid.addEventListener("mousedown",() => {
     if (click === false){
        click = true
     }else if (click === true){
@@ -60,13 +61,56 @@ menuButtons.forEach(button => {
     })
 })
 //here i am adding specific event listeners
+//this first one is for the random colour button
 randomColourButton.addEventListener("mouseenter",() => {
     let subRandom = document.createElement("div")
     subRandom.textContent = "click for random"
-    subRandom.classList.add
+    subRandom.classList.add("sub-random-button")
     randomColourButton.appendChild(subRandom)
 
 })
-gridElements(25)
+randomColourButton.addEventListener("mouseleave", () =>{
+    let child = randomColourButton.lastElementChild
+    randomColourButton.removeChild(child)
+})
+//this next one is for the pixel slider
+pixelSlider.addEventListener("mouseenter",() =>{
+    let slider = document.createElement("input")
+    slider.type = "range"
+    slider.min = "1"
+    slider.max = "100"
+    slider.value = savedSliderValue
+    //this prints out the grid size
+    let sizeDispalay = document.createElement("div")
+    sizeDispalay.textContent = `${slider.value} x ${slider.value}` 
+
+    slider.classList.add("slider")
+    //this part re-makes the grid
+    slider.addEventListener("mouseup", () => {
+        console.log(slider.value)
+        savedSliderValue = slider.value
+        while (grid.firstChild) {
+            grid.removeChild(grid.firstChild);
+        }
+        gridElements(slider.value)
+        //this prints out what the grid size is
+        sizeDispalay.textContent = `${slider.value} x ${slider.value}` 
+        pixelSlider.append(sizeDispalay)
+    })
+    pixelSlider.appendChild(slider)
+    pixelSlider.append(sizeDispalay)
+})
+pixelSlider.addEventListener("mouseleave", () =>{
+    for (let i = 0; i<2; i++){
+        let child = pixelSlider.lastElementChild
+        pixelSlider.removeChild(child)
+    }
+    
+})
+
+
+
+
+//gridElements(25)
 
 
