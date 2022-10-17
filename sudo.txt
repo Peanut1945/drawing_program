@@ -30,4 +30,21 @@ add event listener (mouseleave)
 
 document.querySelector(".paint").style.backgroundColor = "insert color"
 
+
+
+
+IGNORE 
+ //pixel.addEventListener("mouseout", function(e) {
+            //    if (pickRandom === true){
+            //        //generates random colours
+            //        const RGBR = Math.floor(Math.random()*256)
+            //        const RGBG = Math.floor(Math.random()*256)
+            //        const RGBB = Math.floor(Math.random()*256)
+            //    }
+            //    //checks if drawing is toggled on 
+            //    if (click == true && customColour === false){
+            //        e.target.style.background = `rgb(${RGBR}, ${RGBG}, ${RGBB})`
+            //    }
+            //    
+            //})
     

@@ -54,6 +54,7 @@ button{
     text-justify: center;
     padding: 2px;
     padding-top: 6px;
+    margin-left: 3px;
     font-family: 'Courier New', Courier, monospace;
 }
 /* this part is for the changing grid*/
@@ -89,6 +90,14 @@ button{
     align-self: center;
     margin-bottom: 4px;
     margin-top: 11px;
+    background-color: #3c3b3b;
+    border:2px #ffd523 solid;
+    border-radius: 16px;
+    padding: 2px;
+    font-weight: 700;
+}
+.sub-random-button:hover{
+    background-color: #4b4848;
 }
 .slider{
     -webkit-appearance: none;
