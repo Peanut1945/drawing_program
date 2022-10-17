@@ -1,0 +1,33 @@
+creating grid algorithem:
+making the divs:
+function gridElements (PixelAmount):
+    for (let i = 0, i <  PixelAmount){
+        for (let i = 0, i < PixelAmount){
+            pixel = document,createElement(div)
+            divsize()
+            grid.appendChild(grid)
+        }
+    }
+
+styling the divs:
+// i am going to need some way of changing the size of each of the elements 
+// so i am going to need to make a function to do as such
+function divsize (size){
+    pixel.classlist.add(cell)
+    pixel.style.width( `${size}px`)
+    pixel.style.hieght( `${size}px`)
+}
+
+now i need to add event listeners:
+
+add event listener (click)
+    click = true
+add event listener (mouseenter)
+    if click == true:
+        cell.classlist.add(paint)
+add event listener (mouseleave)
+    cell.classlist.remove(paint)
+
+document.querySelector(".paint").style.backgroundColor = "insert color"
+
+    

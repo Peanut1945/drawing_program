@@ -1,15 +1,81 @@
-#grid{
-    width: 460px;
-    height: 460px;
+body{
+    display: flex;
     padding: 0;
-    border: 1px red solid;
+    margin: 0;
+    flex-direction: column;
+}
+h1{
+    justify-self: flex-start;
+    align-self: center;
+    width: fit-content;
+    display: flex;
+    font: 80px "Brush Script MT";
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+button{
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    border: 0px ;
+}
+#top-button{
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+#bottom-button{
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.platform{
+    margin: 7em;
+    margin-top: 4em;
+    display: flex;
+    padding: 3em;
+    border:2px #001f1f solid;
+    border-radius: 13px;
+    box-shadow: 0 0 2rem black;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    width: 16em;
+    border-radius: 8px;
+    margin-top: 1em;
+}
+.menu-button{
+    display: flex;
+    background-color: #808080;
+    height: 2em;
+    width: 14em;
+    transition: all 0.2s;
+    border-radius: 8px;
+    flex-direction: column;
+}
+/* this part is for the changing grid*/
+#grid{
+    width: 500px;
+    height: 500px;
+    padding: 0;
+    border: 1px #1b1b1b solid;
+    display: flex;
+    flex-flow: row wrap;
     
 }
 .cell{
-    outline: 2px black solid;
+    
     display: inline-block;
     margin: 0;
     padding: 0;
     border: 0;
+    vertical-align: bottom;
+    transition: all 0.001s ;
     
+}
+.paint{
+    background-color: #001f1f;
+}
+.outer-button-hover{
+    background-color: #3c3b3b;
+    height: 6em;
 }
