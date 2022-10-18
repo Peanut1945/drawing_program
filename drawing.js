@@ -5,6 +5,7 @@ const pixelSlider = document.querySelector(".pixel-slider")
 const blackColourButton = document.querySelector(".black-button")
 const whiteColourButton = document.querySelector(".white-button")
 const customColourButton = document.querySelector(".custom-button")
+const colourBar = document.querySelector(".colour-bar")
 let savedSliderValue = "50"
 let pickRandom = true
 let customColour = false
@@ -54,11 +55,8 @@ function gridElements (PixelAmount){
                         e.target.style.background = `rgb(${RGBR}, ${RGBG}, ${RGBB})`
                     }
                 }else if (pickWhite === true){
-                    RGBR = 255
-                    RGBG = 255
-                    RGBB = 255
                     if (click == true){
-                        e.target.style.background = `rgb(${RGBR}, ${RGBG}, ${RGBB})`
+                        e.target.style.background = "#D3D5D7"
                     }
                 }else if (customColour === true){
                     if (click == true){
@@ -97,6 +95,11 @@ randomColourButton.addEventListener("mouseenter",() => {
         }else if (pickRandom === false){
             pickRandom = true
         }
+        //this changes the bar colour
+        RGBR = Math.floor(Math.random()*256)
+        RGBG = Math.floor(Math.random()*256)
+        RGBB = Math.floor(Math.random()*256)
+        colourBar.style.background = `rgb(${RGBR}, ${RGBG}, ${RGBB})`
         //this makes sure there are no conflicting arguments
         customColour = false
         pickBlack = false
@@ -122,6 +125,8 @@ blackColourButton.addEventListener("mouseenter",() => {
         }else if (pickBlack === false){
             pickBlack = true
         }
+        //this changes the bar colour
+        colourBar.style.background = "black"
         //this makes sure there are no conflicting arguments
         customColour = false
         pickRandom = false
@@ -147,6 +152,8 @@ whiteColourButton.addEventListener("mouseenter",() => {
         }else if (pickWhite === false){
             pickWhite = true
         }
+        //this changes the bar colour
+        colourBar.style.background = "white"
         //this makes sure there are no conflicting arguments
         customColour = false
         pickRandom = false
@@ -207,6 +214,8 @@ customColourButton.addEventListener("mouseenter",() => {
             customColour = true
         }
         inputColour = prompt("please enter a colour: ")
+        //this changes the colour bar
+        colourBar.style.background = inputColour
         //this makes sure there are no conflicting arguments
         pickRandom = false
         pickBlack = false
@@ -221,3 +230,7 @@ customColourButton.addEventListener("mouseleave", () =>{
 })
 
 gridElements(50)
+RGBR = Math.floor(Math.random()*256)
+RGBG = Math.floor(Math.random()*256)
+RGBB = Math.floor(Math.random()*256)
+colourBar.style.background = `rgb(${RGBR}, ${RGBG}, ${RGBB})`
