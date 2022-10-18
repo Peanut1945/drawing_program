@@ -208,11 +208,7 @@ customColourButton.addEventListener("mouseenter",() => {
     subCustom.classList.add("sub-random-button")
     // this is gives the argument for wether or not we use a custom colour
     subCustom.addEventListener("click", () => {
-        if (customColour === true){
-            customColour = false
-        }else if (customColour === false){
-            customColour = true
-        }
+        customColour = true
         inputColour = prompt("please enter a colour: ")
         //this changes the colour bar
         colourBar.style.background = inputColour
