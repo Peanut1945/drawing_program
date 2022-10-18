@@ -4,12 +4,13 @@ const randomColourButton = document.querySelector(".random-button")
 const pixelSlider = document.querySelector(".pixel-slider")
 const blackColourButton = document.querySelector(".black-button")
 const whiteColourButton = document.querySelector(".white-button")
+const customColourButton = document.querySelector(".custom-button")
 let savedSliderValue = "50"
 let pickRandom = true
 let customColour = false
 let pickBlack = false
 let pickWhite = false
-
+let inputColour = "#000000"
 let click = false
 
 
@@ -59,6 +60,10 @@ function gridElements (PixelAmount){
                     if (click == true){
                         e.target.style.background = `rgb(${RGBR}, ${RGBG}, ${RGBB})`
                     }
+                }else if (customColour === true){
+                    if (click == true){
+                        e.target.style.background = inputColour
+                    }
                 }
 
             })
@@ -82,7 +87,7 @@ menuButtons.forEach(button => {
 //here i am adding specific event listeners
 //this first one is for the random colour button
 randomColourButton.addEventListener("mouseenter",() => {
-    let subRandom = document.createElement("button")
+    let subRandom = document.createElement("div")
     subRandom.textContent = "click for random"
     subRandom.classList.add("sub-random-button")
     // this is gives the argument for wether or not we use a random colour
@@ -107,7 +112,7 @@ randomColourButton.addEventListener("mouseleave", () =>{
 
 //this event listener is for weather or no the colour is black
 blackColourButton.addEventListener("mouseenter",() => {
-    let subBlack = document.createElement("button")
+    let subBlack = document.createElement("div")
     subBlack.textContent = "click for black"
     subBlack.classList.add("sub-random-button")//!!!!!!!!!!!!!!!!to be changed
     // this is gives the argument for wether or not we use a black
@@ -132,7 +137,7 @@ blackColourButton.addEventListener("mouseleave", () =>{
 
 // this is for the rubber whcih is white
 whiteColourButton.addEventListener("mouseenter",() => {
-    let subWhite = document.createElement("button")
+    let subWhite = document.createElement("div")
     subWhite.textContent = "rubber"
     subWhite.classList.add("sub-random-button")//!!!!!!!!!!!!!!!!to be changed
     // this is gives the argument for wether or not we use white
@@ -188,6 +193,31 @@ pixelSlider.addEventListener("mouseleave", () =>{
         pixelSlider.removeChild(child)
     }
     
+})
+//this final one is for the custom colour button
+customColourButton.addEventListener("mouseenter",() => {
+    let subCustom = document.createElement("div")
+    subCustom.textContent = "custom colour"
+    subCustom.classList.add("sub-random-button")
+    // this is gives the argument for wether or not we use a custom colour
+    subCustom.addEventListener("click", () => {
+        if (customColour === true){
+            customColour = false
+        }else if (customColour === false){
+            customColour = true
+        }
+        inputColour = prompt("please enter a colour: ")
+        //this makes sure there are no conflicting arguments
+        pickRandom = false
+        pickBlack = false
+        pickWhite = false
+    })
+    customColourButton.appendChild(subCustom)
+
+})
+customColourButton.addEventListener("mouseleave", () =>{
+    let child = customColourButton.lastElementChild
+    customColourButton.removeChild(child)
 })
 
 gridElements(50)
