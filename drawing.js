@@ -90,11 +90,7 @@ randomColourButton.addEventListener("mouseenter",() => {
     subRandom.classList.add("sub-random-button")
     // this is gives the argument for wether or not we use a random colour
     subRandom.addEventListener("click", () => {
-        if (pickRandom === true){
-            pickRandom = false
-        }else if (pickRandom === false){
-            pickRandom = true
-        }
+        pickRandom = true
         //this changes the bar colour
         RGBR = Math.floor(Math.random()*256)
         RGBG = Math.floor(Math.random()*256)
@@ -120,11 +116,7 @@ blackColourButton.addEventListener("mouseenter",() => {
     subBlack.classList.add("sub-random-button")//!!!!!!!!!!!!!!!!to be changed
     // this is gives the argument for wether or not we use a black
     subBlack.addEventListener("click", () => {
-        if (pickBlack === true){
-            pickBlack = false
-        }else if (pickBlack === false){
-            pickBlack = true
-        }
+        pickBlack = true
         //this changes the bar colour
         colourBar.style.background = "black"
         //this makes sure there are no conflicting arguments
@@ -147,11 +139,7 @@ whiteColourButton.addEventListener("mouseenter",() => {
     subWhite.classList.add("sub-random-button")//!!!!!!!!!!!!!!!!to be changed
     // this is gives the argument for wether or not we use white
     subWhite.addEventListener("click", () => {
-        if (pickWhite === true){
-            pickWhite = false
-        }else if (pickWhite === false){
-            pickWhite = true
-        }
+        pickWhite = true
         //this changes the bar colour
         colourBar.style.background = "white"
         //this makes sure there are no conflicting arguments

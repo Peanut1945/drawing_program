@@ -31,9 +31,10 @@ button{
 }
 .platform{
     margin: 7em;
-    margin-top: 4em;
+    margin-top: 2em;
     display: flex;
     padding: 3em;
+    padding-right: 1em;
     border:2px #001f1f solid;
     border-radius: 13px;
     box-shadow: 0 0 2rem black;
@@ -45,6 +46,7 @@ button{
     width: 14em;
     margin-top: 2em;
     font-weight: 900;
+    margin-left: 1em;
 }
 
 .menu-button{
@@ -81,7 +83,7 @@ button{
     border: 1px #1b1b1b solid;
     display: flex;
     flex-flow: row wrap;
-    
+    box-shadow: 0 0 1rem black;
 }
 .cell{
     
