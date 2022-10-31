@@ -39,6 +39,7 @@ button{
     border-radius: 13px;
     box-shadow: 0 0 2rem black;
     background-color: #D3D5D7;
+    justify-content: center;
 }
 .menu{
     display: flex;
